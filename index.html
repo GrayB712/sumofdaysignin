@@ -66,12 +66,14 @@ function setCookie(cname, cvalue, exdays) {
         var lastCharthree = str.at(-3);
         var lastChartwo = str.at(-2);
         var lastCharone = str.at(-1);
+        var firstSevenChars = str.slice(0, 7);
         var isKey = 0;
         const lastChars = lastCharfive + lastCharfour + lastCharthree + lastChartwo + lastCharone;
         //document.getElementById("p1").innerHTML = lastChars;
         for (let i = 0; i < (keys.length + 1); i++) {
+          if(firstSevenChars === "11A2AOD")
+          {
           if(keys[i] === lastChars){
-            
             document.getElementById("p1").innerHTML = "Success! You can now add summaries!";
             //document.cookie = `key=${str}`;
             //document.cookie = "key="+str;
@@ -80,6 +82,7 @@ function setCookie(cname, cvalue, exdays) {
             //document.getElementById("errors").innerHTML=newString;
             isKey = 1;            
             }
+          }
         }
         if(isKey === 0) {
         document.getElementById("passcode").placeholder="Wrong code!";
