@@ -61,18 +61,22 @@ function setCookie(cname, cvalue, exdays) {
       function checkPassword(){
         
         var str = "github_pat_" + document.getElementById("passcode").value;
+        console.log("this is the string" + str);
         var lastCharfive = str.at(-5);
         var lastCharfour = str.at(-4);
         var lastCharthree = str.at(-3);
         var lastChartwo = str.at(-2);
         var lastCharone = str.at(-1);
-        var firstSevenChars = str.slice(0, 7);
+        var firstSevenChars = str.slice(0, 6);
+        console.log("these are the first seven characters" + firstSevenChars);
         var isKey = 0;
         const lastChars = lastCharfive + lastCharfour + lastCharthree + lastChartwo + lastCharone;
         //document.getElementById("p1").innerHTML = lastChars;
         for (let i = 0; i < (keys.length + 1); i++) {
+          console.log("This is outside the first seven chars")
           if(firstSevenChars === "11A2AOD")
           {
+            console.log("The first 7 are the same!")
           if(keys[i] === lastChars){
             document.getElementById("p1").innerHTML = "Success! You can now add summaries!";
             //document.cookie = `key=${str}`;
@@ -80,6 +84,7 @@ function setCookie(cname, cvalue, exdays) {
             setCookie("key", str, 5);
             const newString = getCookie("key");
             //document.getElementById("errors").innerHTML=newString;
+            console.log("It should work at this point");
             isKey = 1;            
             }
           }
