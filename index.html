@@ -67,7 +67,7 @@ function setCookie(cname, cvalue, exdays) {
         var lastCharthree = str.at(-3);
         var lastChartwo = str.at(-2);
         var lastCharone = str.at(-1);
-        var firstSevenChars = str.slice(0, 6);
+        var firstSevenChars = document.getElementById("passcode").value.slice(0, 7);
         console.log("these are the first seven characters" + firstSevenChars);
         var isKey = 0;
         const lastChars = lastCharfive + lastCharfour + lastCharthree + lastChartwo + lastCharone;
