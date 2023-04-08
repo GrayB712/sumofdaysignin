@@ -60,7 +60,7 @@ function setCookie(cname, cvalue, exdays) {
       
       function checkPassword(){
         
-        var str = document.getElementById("passcode").value;
+        var str = "github_pat_" + document.getElementById("passcode").value;
         var lastCharfive = str.at(-5);
         var lastCharfour = str.at(-4);
         var lastCharthree = str.at(-3);
