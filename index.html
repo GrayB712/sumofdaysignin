@@ -28,12 +28,14 @@ function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
+  console.log("getting the cookie");
   for(let i = 0; i <ca.length; i++) {
     let c = ca[i];
     while (c.charAt(0) == ' ') {
       c = c.substring(1);
     }
     if (c.indexOf(name) == 0) {
+      console.log("got the cookie");
       return c.substring(name.length, c.length);
     }
   }
@@ -43,13 +45,16 @@ function getCookie(cname) {
 function dispKey() {
    //setCookie("key", "034jf", 5);
    const oldString = getCookie("key");
+  console.log("trying to disp key");
    if(oldString != "")
    {
+     console.log("displaying key");
       document.getElementById("errors").innerHTML="Actually, nevermind. You are already signed in!";
    }
 }
 
 function setCookie(cname, cvalue, exdays) {
+  console.log("setting the cookie");
   const d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
   let expires = "expires="+ d.toUTCString();
@@ -59,7 +64,7 @@ function setCookie(cname, cvalue, exdays) {
 
       
       function checkPassword(){
-        
+        console.log("Checking password");
         var str = "github_pat_" + document.getElementById("passcode").value;
         console.log("this is the string" + str);
         var lastCharfive = str.at(-5);
