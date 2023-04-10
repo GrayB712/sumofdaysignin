@@ -74,15 +74,15 @@ function setCookie(cname, cvalue, exdays) {
         var lastChartwo = str.at(-2);
         var lastCharone = str.at(-1);
         var firstSevenChars = document.getElementById("passcode").value.slice(0, 7);
-        console.log("these are the first seven characters" + firstSevenChars);
+        //console.log("these are the first seven characters" + firstSevenChars);
         var isKey = 0;
         const lastChars = lastCharfive + lastCharfour + lastCharthree + lastChartwo + lastCharone;
         //document.getElementById("p1").innerHTML = lastChars;
         for (let i = 0; i < (keys.length + 1); i++) {
-          console.log("This is outside the first seven chars")
+         // console.log("This is outside the first seven chars")
           if(firstSevenChars === "11A2AOD")
           {
-            console.log("The first 7 are the same!")
+            //console.log("The first 7 are the same!")
           if(keys[i] === lastChars){
             document.getElementById("p1").innerHTML = "Success! You can now add summaries!";
             //document.cookie = `key=${str}`;
